@@ -3,6 +3,7 @@ package org.launchcode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.io.File;
 
 public class CountingCharacters {
     public static void main(String[] args) {
@@ -23,14 +24,14 @@ public class CountingCharacters {
         }
 
 
-        String alphabet = "abcdefgfijklmnopqrstuvwxyz";
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
         char[] arrayOfAlphabet = alphabet.toCharArray();
         char[] charactersInString = phrase.toCharArray();
         HashMap<Character, Integer> letterCount = new HashMap<>();
 
         for(Character letter : charactersInString){
-            for(Character let : arrayOfAlphabet){
-                if(letter.equals(let)){
+            for(Character character : arrayOfAlphabet){
+                if(letter.equals(character)){
                     if (! letterCount.containsKey(letter)){
                         letterCount.put(letter,1);
                     }else {
@@ -38,15 +39,12 @@ public class CountingCharacters {
                     }
                 }
             }
-
-
-
-
         }
 
         System.out.println("The phrase: \n\n" +  phrase + "\n\nhas the following letters: ");
         for(Map.Entry<Character,Integer> entry : letterCount.entrySet()){
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+
     }
 }
