@@ -12,14 +12,14 @@ public class CountingCharacters {
         String inputPhrase = input.nextLine();
         String phrase;
 
-        if (inputPhrase.equals("")){
+        if (inputPhrase.equals("")){ //if no phrase is entered - use default
             String originalPhrase = "If the product of two terms is zero then common sense says at least one of the two terms has " +
                     "to be zero to start with. So if you move all the terms over to one side, you can put the quadratics " +
                     "into a form that can be factored allowing that side of the equation to equal zero. Once you’ve done " +
                     "that, it’s pretty straightforward from there.";
             phrase = originalPhrase.toLowerCase();
 
-        } else {
+        } else { //uses user's phrase
             phrase = inputPhrase.toLowerCase();
         }
 
@@ -29,12 +29,14 @@ public class CountingCharacters {
         char[] charactersInString = phrase.toCharArray();
         HashMap<Character, Integer> letterCount = new HashMap<>();
 
+
+        //iterates through each character in the data and compares it to letters in the alphabet
         for(Character letter : charactersInString){
             for(Character character : arrayOfAlphabet){
-                if(letter.equals(character)){
-                    if (! letterCount.containsKey(letter)){
+                if(letter.equals(character)){ // if character is a letter of the alphabet (no special characters)
+                    if (! letterCount.containsKey(letter)){ //if not already in HashMap- will add letter with value of 1
                         letterCount.put(letter,1);
-                    }else {
+                    }else { // if letter is in HashMap- adds 1 to value
                         letterCount.put(letter, letterCount.get(letter) + 1);
                     }
                 }

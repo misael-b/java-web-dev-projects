@@ -21,16 +21,19 @@ public class CountingCharactersBonus {
 
 
         while (myReader.hasNextLine()) {
+            //reads the lines in the file name
             data = myReader.nextLine().toLowerCase();
 
+            // creates an array of char from the String in the file
             char[] arrayOfData = data.toCharArray();
 
+            //iterates through each character in the data and compares it to letters in the alphabet
             for(Character letter : arrayOfData){
                 for(Character character : arrayOfAlphabet){
                     if(letter.equals(character)){
-                        if (! letterCount.containsKey(letter)){
+                        if (! letterCount.containsKey(letter)){ //if not already in HashMap- will add letter with value of 1
                             letterCount.put(letter,1);
-                        }else {
+                        }else { //if letter in HashMap, will add one to the value
                             letterCount.put(letter, letterCount.get(letter) + 1);
                         }
                     }
