@@ -10,7 +10,7 @@ public class CountingCharactersBonus {
     public static void main(String[] args) throws FileNotFoundException {
         //BONUS: Reading from files in Java
 
-        File myObj = new File("/Users/mbarcenas/Desktop/LaunchCode/java-web-dev-projects/control-flow-and-collections/studio/counting-characters/src/main/myfile.txt");
+        File myObj = new File("/Users/mbarcenas/Desktop/LaunchCode/java-web-dev-projects/control-flow-and-collections/studio/counting-characters/myfile.txt");
         Scanner myReader = new Scanner(myObj);
         String data;
 
@@ -20,7 +20,7 @@ public class CountingCharactersBonus {
         char[] arrayOfAlphabet = alphabet.toCharArray();
 
 
-        while (myReader.hasNextLine()) {
+        while (myReader.hasNextLine()) { // returns true if there is another line in the input of this scanner
             //reads the lines in the file name
             data = myReader.nextLine().toLowerCase();
 
