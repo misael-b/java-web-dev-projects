@@ -1,11 +1,9 @@
 public class StudentPractice {
     public static void main(String[] args){
         //insantiate your Student class below
-        Student myInfo = new Student();
-        myInfo.setName("Misael");
-        myInfo.setGpa(4.0);
-        myInfo.setStudentID(75673);
-        myInfo.setNumberOfCredits(1);
+        Student myInfo = new Student("Misael",8576,1,4.0);
+        myInfo.setStudentID(98);
+
 
         System.out.println(myInfo.getName());
         System.out.println(myInfo.getGpa());

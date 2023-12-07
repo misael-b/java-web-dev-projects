@@ -10,9 +10,9 @@ public class Course {
         return grades;
     }
 
-    public void setGrades(String aStudent, Double aGrade){
+    public void setGrades(Student aStudent, Double aGrade){
         HashMap<String,Double> aGrades = new HashMap<>();
-        grades.put(aStudent,aGrade);
+        grades.put(aStudent.getName(),aGrade);
     }
 
     public double getCredits(){

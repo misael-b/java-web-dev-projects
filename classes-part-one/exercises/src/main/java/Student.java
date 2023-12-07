@@ -9,7 +9,7 @@ public class Student {
                 return this.name;
         }
 
-        public void setName(String anInput){
+        void setName(String anInput){
                 this.name = anInput;
         }
 
@@ -17,7 +17,7 @@ public class Student {
                 return studentId;
         }
 
-        public void setNumberOfCredits(int aCredits){
+        void setNumberOfCredits(int aCredits){
                 this.numberOfCredits = aCredits;
         }
 
@@ -25,7 +25,7 @@ public class Student {
                 return numberOfCredits;
         }
 
-        public void setStudentID(int anID){
+        void setStudentID(int anID){
                 this.studentId = anID;
         }
 
@@ -33,9 +33,15 @@ public class Student {
                 return gpa;
         }
 
-        public void setGpa(double aGPA) {
+        void setGpa(double aGPA) {
                 this.gpa = aGPA;
         }
         // To instantiate the Student class, add your code to the main in the file, SchoolPractice.
 
+        Student(String name, int studentId, int numberOfCredits, double gpa) {
+                this.name = name;
+                this.studentId = studentId;
+                this.numberOfCredits = numberOfCredits;
+                this.gpa = gpa;
+        }
 }
