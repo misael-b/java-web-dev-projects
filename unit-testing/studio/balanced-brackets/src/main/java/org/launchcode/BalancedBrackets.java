@@ -19,15 +19,42 @@ public class BalancedBrackets {
      * @param str - to be validated
      * @return true if balanced, false otherwise
      */
-    public static boolean hasBalancedBrackets(String str) {
-        int brackets = 0;
+    public static boolean hasBalancedBrackets(String str, String balancingCharacter) {
+        char openingChar = balancingCharacter.charAt(0);
+        char closingChar = balancingCharacter.charAt(1);
+
+        int bracketsOpening = 0;
+        int bracketsClosing = 0;
+
+        int bracketsOpeningIndex = 0;
+        int bracketsClosingIndex = 0;
+        int i = 0;
         for (char ch : str.toCharArray()) {
-            if (ch == '[') {
-                brackets++;
-            } else if (ch == ']') {
-                brackets--;
+            if (ch == openingChar) {
+                bracketsOpening++;
+                bracketsOpeningIndex =+ i;
+            } else if (ch == closingChar) {
+                bracketsClosing++;
+                bracketsClosingIndex =+ i;
             }
+            i++;
         }
-        return brackets == 0;
+
+        if (bracketsClosing == bracketsOpening){
+            if (bracketsOpening == 0){
+                return true;
+            }
+
+            if (str.indexOf(openingChar) < str.indexOf(closingChar)){ //checks that strings starts with opening bracket
+                if (bracketsOpeningIndex <= bracketsClosingIndex){
+                    return true;
+                }
+
+            }
+
+        } else{
+            return false;
+    }
+        return false;
     }
 }
