@@ -46,7 +46,7 @@ public class BalancedBrackets {
             }
 
             if (str.indexOf(openingChar) < str.indexOf(closingChar)){ //checks that strings starts with opening bracket
-                if (bracketsOpeningIndex <= bracketsClosingIndex){
+                if (bracketsOpeningIndex < bracketsClosingIndex){
                     return true;
                 }
 

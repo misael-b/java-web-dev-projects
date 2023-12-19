@@ -85,6 +85,10 @@ class BalancedBracketsTest {
     public void onlyBracketsReturnsFalseCase7() {
         assertFalse(BalancedBrackets.hasBalancedBrackets("[lkf]ff]f[f", "[]"));
     }
+    @Test
+    public void onlyBracketsReturnsTrueCase7() {
+        assertTrue(BalancedBrackets.hasBalancedBrackets("[[[[][]]]]", "[]"));
+    }
 
 
 
