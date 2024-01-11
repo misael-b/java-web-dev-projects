@@ -1,6 +1,7 @@
 package org.launchcode;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,16 +13,55 @@ public class Main {
         studentFiles.put("Elizabeth", "MyCode.java");
         studentFiles.put("Stefanie", "CoolProgram.java");
 
+
+        Divide(10,0);
+
         // Test out your CheckFileExtension() function!
+        for (Map.Entry<String, String> student : studentFiles.entrySet()){
+            System.out.println(CheckFileExtension(student.getValue()));
+
+        }
     }
 
-    public static void Divide(int x, int y)
+    public static int Divide(int x, int y)
     {
-        // Write code here!
+//        int answer = 0;
+//        if (y == 0){
+//            try {
+//                throw new ArithmeticException("Can not divide by zero!");
+//            } catch (ArithmeticException e) {
+//                e.printStackTrace();
+//            }
+//        } else {
+//           return x/y;
+//        }
+//        return answer;
+        try {
+            return x/y;
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+            return 0;
+        }
+
     }
 
     public static int CheckFileExtension(String fileName)
     {
-        // Write code here!
+        if (fileName.contains(".java")){
+            return 1;
+        }
+        if (fileName.isEmpty()) {
+            try {
+                throw new NullPointerException("Missing File Extension!");
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+                return -1;
+
+            }
+        }
+
+
+        return 0;
+
     }
 }
