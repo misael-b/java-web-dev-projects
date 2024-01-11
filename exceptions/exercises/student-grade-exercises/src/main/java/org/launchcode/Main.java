@@ -15,15 +15,16 @@ public class Main {
 
 
         Divide(10,0);
+        Divide(4,2);
 
         // Test out your CheckFileExtension() function!
         for (Map.Entry<String, String> student : studentFiles.entrySet()){
-            System.out.println(CheckFileExtension(student.getValue()));
+            System.out.println(student.getKey() + ": " + CheckFileExtension(student.getValue()));
 
         }
     }
 
-    public static int Divide(int x, int y)
+    public static void Divide(int x, int y)
     {
 //        int answer = 0;
 //        if (y == 0){
@@ -37,11 +38,13 @@ public class Main {
 //        }
 //        return answer;
         try {
-            return x/y;
+            System.out.println(x/y);
+
         } catch (ArithmeticException e) {
             e.printStackTrace();
-            return 0;
+
         }
+        ;
 
     }
 
